@@ -7,13 +7,12 @@ const ejs = require("ejs");
 
 const options = {
   format: "A4",
-  border: {
-    right: "8",
-  },
+  type: "pdf",
+  orientation: "portrait",
+  border: {},
 };
 
 router.get("/", async function (req, res) {
-
   await setTimeout(
     () =>
       fs.readFile("./uploads/report.pdf", async function (err, data) {
@@ -40,4 +39,3 @@ router.post("/", async function (req, res) {
 });
 
 module.exports = router;
-
